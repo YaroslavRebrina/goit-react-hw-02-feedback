@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import css from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
-export class FeedbackOptions extends Component {
-  render() {
-    return (
-      <button
-        className={css.button__option}
-        key={this.props.id}
-        id={this.props.id}
-        type="button"
-        onClick={this.props.onClick}
-      >
-        {this.props.id}
-      </button>
-    );
-  }
-}
+export const FeedbackOptions = ({ id, onClick }) => {
+  return (
+    <button
+      className={css.button__option}
+      key={id}
+      id={id}
+      type="button"
+      onClick={onClick}
+    >
+      {id}
+    </button>
+  );
+};
 
 FeedbackOptions.propTypes = {
   id: PropTypes.string.isRequired,

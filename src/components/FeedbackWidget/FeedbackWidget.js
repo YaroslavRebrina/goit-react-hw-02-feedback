@@ -11,7 +11,7 @@ export class FeedbackWidget extends Component {
     bad: 0,
   };
 
-  handlerOnGoodButtonClick = e => {
+  handlerClick = e => {
     this.setState({ [e.target.id]: this.state[e.target.id] + 1 });
   };
 
@@ -36,11 +36,7 @@ export class FeedbackWidget extends Component {
         <h1>Please leave feedback</h1>
         <div className={css.buttons__wrapper}>
           {Object.keys(this.state).map(item => (
-            <FeedbackOptions
-              key={item}
-              id={item}
-              onClick={this.handlerOnGoodButtonClick}
-            />
+            <FeedbackOptions key={item} id={item} onClick={this.handlerClick} />
           ))}
         </div>
         <h2>Statistics</h2>
